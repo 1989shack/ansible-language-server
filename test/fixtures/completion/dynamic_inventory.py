@@ -21,14 +21,9 @@ class ExampleInventory(object):
         # Called with `--list`.
         if self.args.list:
             self.inventory = self.example_inventory()
-        # Called with `--host [hostname]`.
-        elif self.args.host:
+        else:
             # Not implemented, since we return _meta info `--list`.
             self.inventory = self.empty_inventory()
-        # If no groups or vars are present, return an empty inventory.
-        else:
-            self.inventory = self.empty_inventory()
-
         print(json.dumps(self.inventory));
 
     # Example inventory for testing.
